@@ -1,6 +1,12 @@
 # Ubuntu 16.04+ deps
 sudo apt-get install ccache bc bison build-essential curl flex git gnupg gperf libesd0-dev liblz4-tool libncurses5-dev libsdl1.2-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop maven openjdk-8-jdk pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev g++-multilib gcc-multilib lib32ncurses5-dev lib32readline6-dev lib32z1-dev 
 
+# Git Settings
+git config --global user.email "abhisek.mukherjee@gmail.com"
+git config --global user.name "abhis3k"
+git config --global review.review.cyanogenmod.org.username "abhi_nova_kenzo"
+git config --global review.review.cyanogenmod.org.email "abhisek.mukherjee@gmail.com"
+
 # Repo Commands
 repo init -u https://github.com/CyanogenMod/android.git -b cm-14.0
 mkdir .repo/local_manifests
@@ -12,6 +18,7 @@ prebuilts/misc/linux-x86/ccache/ccache -M 35G
 # Build for Kenzo
 source build/envsetup.sh
 cd device/xiaomi/kenzo
+./extract-files.sh ~/androdev/rom/cm14
 ./extract-files.sh ~/androdev/rom/mimax
 ./extract-files.sh ~/androdev/rom/miui
 croot
